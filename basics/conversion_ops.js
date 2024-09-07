@@ -26,3 +26,17 @@ console.log(convert_log);
 "" = false
 "name" = true
 */
+
+
+// OPERATIONS
+
+let num = 3
+let newNum = -num;
+//console.log(newNum);
+
+// console.log("5" + 5);
+// console.log(5 + "5");
+// console.log(5 + "5" + 5);
+// console.log(5 + "5" + 5 + 5);
+// console.log(5 + "5" + 5 + (5 + 5));
+// console.log(5 + 5 + "5" + 5 + 5);
