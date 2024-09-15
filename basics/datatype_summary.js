@@ -70,8 +70,3 @@ objTwo.job = "Tester";
 
 console.log(objTwo);
 console.log(objOne);
-
-
-
-
-
