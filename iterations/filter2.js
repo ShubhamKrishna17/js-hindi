@@ -22,7 +22,10 @@
 
 let numb = [1,2,3,4,5]
 
-let res=numb.map((val)=> val+5)
+let res=numb
+.map((val)=> val+5)
+.map((val)=>val*5)
+.filter((val)=>val>10)
 console.log(res);
 
 
