@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document obj model</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let divData = document.createElement('div');
+    console.log(divData);
+    divData.style.color="Green";
+    divData.style.backgroundColor = "yellow"
+
+    divData.setAttribute('placeholder','Enter your details')
+   
+   let newData = document.createTextNode('Hello Buddies!')
+divData.append(newData);
+
+document.body.appendChild(divData)
+
+</script>
+</html>

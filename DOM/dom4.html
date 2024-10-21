@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document obj model</title>
+</head>
+
+<body style="background-color: #1967d2; color:black">
+    <ul class="langg">
+        <li>Javascript</li>
+        <li>React</li>
+    </ul>
+</body>
+<script>
+    // function addLang(lang) {
+    //     const li = document.createElement('li')
+    //     li.innerHTML = `${lang}`
+
+    //     let data = document.querySelector('.langg').appendChild(li)
+     
+    // }
+
+
+    // addLang('Python');
+    // addLang('HTML');
+function insert(insertData){
+   let data = document.createElement('li')
+   let newData = document.createTextNode(insertData);
+   data.appendChild(newData)
+   console.log(document.querySelector('.langg').appendChild(data));
+   
+}
+   
+insert('Shubham')
+insert('Kashish')
+
+//EDIT
+let newData = document.querySelector('li:nth-child(1)')
+let li = document.createElement('li')
+
+li.textContent="Rathore"
+newData.replaceWith(li)
+
+let changed = document.querySelector('li:nth-child(3)')
+changed.outerHTML = '<li>Typescript</li>'
+
+let changed2 = document.querySelector('li:nth-child(4)')
+changed2.innerHTML="Hello Shubham";
+
+
+const delte = document.querySelector('li:nth-child(2)')
+delte.remove()
+
+
+</script> 
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Obj Model</title>
+</head>
+<body style="background-color:beige;">
+    <div class="parent">
+
+hello
+<h1>hello</h1>
+
+
+
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+  const test = document.querySelector('.parent')
+  const test1 = test.children
+  console.log(test1);
+  console.log(test1[1].innerText);
+  
+
+for(i=0;i<test1.length;i++){
+
+console.log(test1[i].innerHTML);
+}
+
+test1[2].style.backgroundColor="green"
+
+
+// let res = Array.from(test1)
+
+
+// let result = res.map((val)=>{ 
+// val.style.backgroundColor="orange";
+// return val;
+
+// })
+// console.log(result);
+// console.log("NODES :", parent.childNodes);
+
+let xyz = document.querySelector(".day")
+console.log(xyz.innerText);
+console.log(xyz.parentElement);
+console.log(xyz.nextElementSibling);
+
+console.log('NODES:', test.childNodes);
+
+
+
+
+    </script>
+</html>
