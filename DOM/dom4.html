@@ -25,33 +25,48 @@
 
     // addLang('Python');
     // addLang('HTML');
-function insert(insertData){
-   let data = document.createElement('li')
-   let newData = document.createTextNode(insertData);
-   data.appendChild(newData)
-   console.log(document.querySelector('.langg').appendChild(data));
+// function insert(insertData){
+//    let data = document.createElement('li')
+//    let newData = document.createTextNode(insertData);
+//    data.appendChild(newData)
+//    console.log(document.querySelector('.langg').appendChild(data));
    
+// }
+   
+// insert('Shubham')
+// insert('Kashish')
+
+// //EDIT
+// let newData = document.querySelector('li:nth-child(1)')
+// let li = document.createElement('li')
+
+// li.textContent="Rathore"
+// newData.replaceWith(li)
+
+// let changed = document.querySelector('li:nth-child(3)')
+// changed.outerHTML = '<li>Typescript</li>'
+
+// let changed2 = document.querySelector('li:nth-child(4)')
+// changed2.innerHTML="Hello Shubham";
+
+
+// const delte = document.querySelector('li:nth-child(2)')
+// delte.remove()
+
+function insert(input){
+    let data = document.createElement('li')
+let textData = document.createTextNode(input)
+data.appendChild(textData)
+
+
+let final = document.querySelector('.langg')
+
+final.appendChild(data);
 }
-   
-insert('Shubham')
-insert('Kashish')
+insert('Apple')
+insert('Samsung')
+insert('OnePlus')
 
-//EDIT
-let newData = document.querySelector('li:nth-child(1)')
-let li = document.createElement('li')
-
-li.textContent="Rathore"
-newData.replaceWith(li)
-
-let changed = document.querySelector('li:nth-child(3)')
-changed.outerHTML = '<li>Typescript</li>'
-
-let changed2 = document.querySelector('li:nth-child(4)')
-changed2.innerHTML="Hello Shubham";
-
-
-const delte = document.querySelector('li:nth-child(2)')
-delte.remove()
 
 
 </script> 
