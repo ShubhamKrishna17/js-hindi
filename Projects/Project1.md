@@ -164,3 +164,84 @@ function newGame() {
 }
 
 ```
+
+## Project 4 Repeat
+```
+let number = Math.random().toFixed(2);
+
+let submit = document.querySelector('#subt');
+let guessInput = document.querySelector('#guessField');
+let guessCollection = document.querySelector('.guesses');
+let remAttempt = document.querySelector('.lastResult');
+let lowOrHi = document.querySelector('.lowOrHi');
+let startOver = document.querySelector('.resultParas');
+
+let guessData = [];
+let playGame = true;
+let guessNum = 1;
+
+const p = document.createElement('p');
+
+if (playGame) {
+  submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    let userInput = guessInput.value;
+    checkData(userInput);
+  });
+}
+
+function checkData(userInput) {
+  if (isNaN(userInput) || userInput <= 0 || userInput > 100) {
+    alert('Data is is not in range of 0-100');
+  } else {
+    guessData.push(userInput);
+
+    if (guessNum === 11) {
+      submit.setAttribute('disabled', '');
+      remAttempt.innerHTML = 'No more attempts left';
+      endGame();
+    } else {
+      displayData();
+    }
+  }
+}
+
+function displayData() {
+  guessCollection.innerHTML = `${guessData}`;
+  guessNum++;
+  guessInput.value = '';
+  remAttempt.innerHTML = `${11 - guessNum}`;
+}
+
+function endGame() {
+  guessInput.value = '';
+  guessData = [];
+  remAttempt.innerHTML = '';
+  guessCollection.innerHTML = '';
+  guessInput.setAttribute('disabled', '');
+  p.innerHTML = `<span id = "nGame">Start New Game</span>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+function newGame() {
+  let newGme = document.querySelector('#nGame');
+  newGme.value = '';
+  newGme.addEventListener('click', function (e) {
+    number = parseInt(Math.random() * 100 + 1);
+
+    guessInput.removeAttribute('disabled');
+    guessInput.value;
+    playGame = true;
+    guessData = [];
+    guessNum = 1;
+
+    guessCollection.innerHTML = '';
+    startOver.removeChild(p);
+    remAttempt.innerHTML = ``;
+  });
+}
+
+
+```
