@@ -31,30 +31,28 @@ buttons.forEach(function (val) {
 ## Project 2
 
 ```
-const form = document.querySelector('form');
+let form = document.querySelector('form');
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const height = parseInt(document.querySelector('#height').value);
-  const weight = parseInt(document.querySelector('#weight').value);
-  const result = document.querySelector('#results');
+  let height = parseInt(document.querySelector('#height').value);
+  let weight = parseInt(document.querySelector('#weight').value);
+  let results = document.querySelector('#results');
 
-  // Check if height or weight is NaN or less than or equal to zero
-  if (isNaN(height) || height <= 0 || isNaN(weight) || weight <= 0) {
-    result.innerHTML = 'Please enter a valid height and weight';
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML == 'Please enter valid details';
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = 'Please enter valid details';
   } else {
-    let bmi = (result.innerHTML = (
-      weight /
-      ((height * weight) / 10000)
-    ).toFixed(2));
-
-    result.innerHTML = `<span>${bmi}</span>`;
-    if (bmi >= 18.6) {
-      result.innerHTML += '<br>overweight';
-    } else if (bmi >= 18.6 && bmi <= 25) {
-      result.innerHTML += '<br>Normal';
-    } else {
-      result.innerHTML += '<br>underweight';
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    results.innerHTML = `<span>${bmi}</span>`;
+    if (bmi < 18.6) {
+      results.innerHTML = `Your BMI is ${bmi} and You're underweight`;
+    } else if (bmi > 18.6 && bmi < 24.9) {
+      results.innerHTML = `Your BMI is ${bmi} and You're Normal Weight`;
+    } else if (bmi > 24.9) {
+      results.innerHTML = `Your BMI is ${bmi} and You're OverWeight`;
     }
   }
 });
