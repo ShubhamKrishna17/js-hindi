@@ -331,3 +331,35 @@ function newGame() {
 
 
 ```
+
+## Project 5
+
+```
+function colorCode() {
+  let hexVal = '1234567890abcdef';
+  let hex = '#';
+
+  for (let i = 0; i < 6; i++) {
+    hex += hexVal[Math.floor(Math.random() * 16)];
+  }
+  return hex;
+}
+
+let data;
+document.querySelector('#start').addEventListener('click', function () {
+  if (!data) {
+    data = setInterval(color, 1000);
+  }
+
+  function color() {
+    document.body.style.backgroundColor = colorCode();
+  }
+});
+
+document.querySelector('#stop').addEventListener('click', function () {
+  clearInterval(data);
+  // data = null;
+});
+
+
+```
