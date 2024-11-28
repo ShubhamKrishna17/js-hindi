@@ -14,18 +14,19 @@
 4	DONE	The operation is complete.
 </body>
 <script>
-    let requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-   let data = new XMLHttpRequest()
-   data.open('GET',requestUrl);
-   data.send();
-   data.onreadystatechange = function(){
+   
+let apiUrl = 'https://api.github.com/users/hiteshchoudhary';
+let data = new XMLHttpRequest();
+data.open('GET',apiUrl)
+data.onreadystatechange = function(){
     if(data.readyState === 4){
-        let data = JSON.parse(this.responseText)
-        console.log(data.location)
-    }
-   }
 
-  
+       let newdata = JSON.parse(data.responseText)
+       console.log(newdata.followers)
+    }
+   
+}
+data.send()
 
 </script>
 </html>
