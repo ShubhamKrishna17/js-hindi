@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let urlData = 'https://api.github.com/users/hiteshchoudhary'
+
+let xmlData = new XMLHttpRequest();
+xmlData.open('GET',urlData)
+xmlData.onreadystatechange = function(){
+    if(xmlData.readyState===4){
+        let newData = JSON.parse(xmlData.responseText)
+    
+        console.log(newData.followers)
+    }
+    
+}
+let user = xmlData.send()
+
+</script>
+</html>
+
